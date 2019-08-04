@@ -142,7 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecb8e6912204cda4aa6c1e3218f22af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: 10
 --- !u!114 &243049643208948685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +167,7 @@ GameObject:
   - component: {fileID: 2970903815495970661}
   - component: {fileID: 426204974329473057}
   m_Layer: 0
-  m_Name: CubeSides Red
+  m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -261,7 +260,7 @@ GameObject:
   - component: {fileID: 657142670537002445}
   - component: {fileID: 3671207094769036522}
   m_Layer: 0
-  m_Name: CubeSides Green
+  m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -354,7 +353,7 @@ GameObject:
   - component: {fileID: 6409281019817989769}
   - component: {fileID: 6711631632339658981}
   m_Layer: 0
-  m_Name: CubeSides Orange
+  m_Name: Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -447,7 +446,7 @@ GameObject:
   - component: {fileID: 6674968802706072275}
   - component: {fileID: 1197626074524103737}
   m_Layer: 0
-  m_Name: CubeSides Purple
+  m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -540,7 +539,7 @@ GameObject:
   - component: {fileID: 5329109526260160671}
   - component: {fileID: 189630562322552129}
   m_Layer: 0
-  m_Name: CubeSides Blue
+  m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -634,7 +633,7 @@ GameObject:
   - component: {fileID: 3743800502368075003}
   - component: {fileID: 4938823336510182128}
   m_Layer: 0
-  m_Name: CubeSides Yellow
+  m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
