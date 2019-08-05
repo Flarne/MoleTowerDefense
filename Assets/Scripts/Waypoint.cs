@@ -18,7 +18,7 @@ public class Waypoint : MonoBehaviour
 	{
 		return gridSize;
 	}
-
+	
 	// consider setting own color in Update
 	// neighbour.SetTopColor(Color.black);
 
