@@ -5765,10 +5765,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1433386550239011949, guid: c56f27597a34615418eaf3b78933a88e,
-        type: 3}
-      propertyPath: targetEnemy
-      value: 
+    - target: {fileID: 1566909112, guid: c56f27597a34615418eaf3b78933a88e, type: 3}
+      propertyPath: CollisionModule.collidesWithDynamic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1566909112, guid: c56f27597a34615418eaf3b78933a88e, type: 3}
+      propertyPath: CollisionModule.m_EnergyLossOnCollision.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1566909112, guid: c56f27597a34615418eaf3b78933a88e, type: 3}
+      propertyPath: CollisionModule.minKillSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1566909112, guid: c56f27597a34615418eaf3b78933a88e, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c56f27597a34615418eaf3b78933a88e, type: 3}

@@ -3737,7 +3737,7 @@ ParticleSystem:
     quality: 0
     voxelSize: 0.5
     collisionMessages: 1
-    collidesWithDynamic: 1
+    collidesWithDynamic: 0
     interiorCollisions: 0
   TriggerModule:
     enabled: 0
@@ -4800,8 +4800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToPan: {fileID: 4573882216235327839}
-  targetEnemy: {fileID: 0}
-  attackRange: 20
+  attackRange: 30
   projectileParticle: {fileID: 1566909112}
 --- !u!1 &4016770779849158749
 GameObject:

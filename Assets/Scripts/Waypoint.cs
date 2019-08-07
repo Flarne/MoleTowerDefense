@@ -9,6 +9,7 @@ public class Waypoint : MonoBehaviour
 	// public is ok here as is a data class
 	public bool isExplored = false;
 	public Waypoint exploredFrom;
+	public bool isPlacable = true;
 
 	Vector2Int gridPos;
 
@@ -34,5 +35,20 @@ public class Waypoint : MonoBehaviour
 	{
 		MeshRenderer topMeshRenderer = transform.Find("Top").GetComponent<MeshRenderer>();
 		topMeshRenderer.material.color = color;
+	}
+
+	void OnMouseOver()
+	{
+		if (Input.GetMouseButtonDown(0))
+		{
+			if (isPlacable)
+			{
+				print(gameObject.name + " Tower can be placed!");
+			}
+			else
+			{
+				print("Not Placable!!!");
+			}
+		}
 	}
 }
