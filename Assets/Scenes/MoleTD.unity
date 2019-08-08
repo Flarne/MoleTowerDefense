@@ -2278,6 +2278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1010043086}
   - component: {fileID: 1010043087}
+  - component: {fileID: 1010043088}
   m_Layer: 0
   m_Name: World
   m_TagString: Untagged
@@ -2375,6 +2376,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startWaypoint: {fileID: 1646489342}
   endWaypoint: {fileID: 1894475578}
+--- !u!114 &1010043088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010043085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fdd182ab3cdc2346b904400a41d0760, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placeTower: {fileID: 1433386550239011949, guid: c56f27597a34615418eaf3b78933a88e,
+    type: 3}
+  towerLimit: 5
 --- !u!1001 &1021479978
 PrefabInstance:
   m_ObjectHideFlags: 0
