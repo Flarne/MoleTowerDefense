@@ -5,7 +5,6 @@ using UnityEngine;
 public class Waypoint : MonoBehaviour
 {
 	[SerializeField] Color exploredColor;
-	[SerializeField] Tower placeTower;
 
 	// public is ok here as is a data class
 	public bool isExplored = false;
@@ -45,8 +44,7 @@ public class Waypoint : MonoBehaviour
 		{
 			if (isPlacable)
 			{
-				Instantiate(placeTower, transform.position, Quaternion.identity);
-				isPlacable = false;
+				FindObjectOfType<TowerFactory>().AddTower(this);
 			}
 			else
 			{
