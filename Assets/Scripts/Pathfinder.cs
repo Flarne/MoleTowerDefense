@@ -48,8 +48,8 @@ public class Pathfinder : MonoBehaviour
 		while (previousBlock != startWaypoint)
 		{
 			// Add intermediate waypoints
-			previousBlock.SetTopColor(Color.black);
 			SetAsPath(previousBlock);
+			previousBlock.SetTopColor(Color.black);
 			previousBlock = previousBlock.exploredFrom;
 		}
 

@@ -5,11 +5,13 @@ using UnityEngine;
 public class Waypoint : MonoBehaviour
 {
 	[SerializeField] Color exploredColor;
+	[SerializeField] Tower placeTower;
 
 	// public is ok here as is a data class
 	public bool isExplored = false;
 	public Waypoint exploredFrom;
 	public bool isPlacable = true;
+	public bool isOccupiedTower = false;
 
 	Vector2Int gridPos;
 
@@ -43,7 +45,8 @@ public class Waypoint : MonoBehaviour
 		{
 			if (isPlacable)
 			{
-				print(gameObject.name + " Tower can be placed!");
+				Instantiate(placeTower, transform.position, Quaternion.identity);
+				isPlacable = false;
 			}
 			else
 			{

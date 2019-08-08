@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-	[SerializeField] GameObject hitEffect;
 	[SerializeField] Transform parent;
 	[SerializeField] int scorePerHit = 12;
 	[SerializeField] int hits = 10;
+	[SerializeField] ParticleSystem hitParticlePrefab;
+	[SerializeField] ParticleSystem deathParticlePrefab;
 
 	void Start()
 	{
@@ -18,8 +19,7 @@ public class EnemyDamage : MonoBehaviour
 	private void OnParticleCollision(GameObject other)
 	{
 		ProcessHit();
-		print("I'm hit!!!");
-		if (hits <= 1)
+		if (hits <= 0)
 		{
 			KillEnemy();
 		}
@@ -44,13 +44,14 @@ public class EnemyDamage : MonoBehaviour
 
 	private void KillEnemy()
 	{
-		GameObject hitFX = Instantiate(hitEffect, transform.position, Quaternion.identity);
-		hitFX.transform.parent = parent;
+		var vfx = Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
+		vfx.Play();
 		Destroy(gameObject);
 	}
 
 	private void ProcessHit()
 	{
 		hits = hits - 1;
+		hitParticlePrefab.Play();
 	}
 }
