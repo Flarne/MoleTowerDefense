@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
 	[SerializeField] float enemySpeed = 2f;
+	[SerializeField] ParticleSystem enemySelfDestruct;
 
     void Start()
 	{
@@ -22,6 +23,17 @@ public class EnemyMovement : MonoBehaviour
 			transform.position = waypoint.transform.position;
 			yield return new WaitForSeconds(enemySpeed);
 		}
-		print("Ending Patrol");
+		SelfDestruct();
+	}
+
+	private void SelfDestruct()
+	{
+		var vfx = Instantiate(enemySelfDestruct, transform.position, Quaternion.identity);
+		vfx.Play();
+		float destroyDelay = vfx.main.duration;
+		destroyDelay = 2f;
+
+		Destroy(vfx.gameObject, destroyDelay);
+		Destroy(gameObject);
 	}
 }
