@@ -5,8 +5,9 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
 	[Range (0.1f, 120f)]
-	[SerializeField] float secondsBetweenSpawns = 2f;
+	[SerializeField] float secondsBetweenSpawns = 4f;
 	[SerializeField] EnemyMovement enemyPrefab;
+	[SerializeField] Transform enemyParentTransform;
 
     void Start()
     {
@@ -17,7 +18,8 @@ public class EnemySpawn : MonoBehaviour
 	{
 		while (true) // Forever
 		{
-			Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+			var newEnemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+			newEnemy.transform.parent = enemyParentTransform;
 			print("Spawning");
 
 			yield return new WaitForSeconds(secondsBetweenSpawns);

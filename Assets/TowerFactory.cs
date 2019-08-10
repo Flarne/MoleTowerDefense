@@ -4,34 +4,53 @@ using UnityEngine;
 
 public class TowerFactory : MonoBehaviour
 {
-	[SerializeField] Tower placeTower;
 	[SerializeField] int towerLimit = 5;
+	[SerializeField] Tower placeTower;
+	[SerializeField] Transform towerParentTransform;
 
-	int numTowers = 0;
+	Queue<Tower> towerQueue = new Queue<Tower>();
 
 	public void AddTower(Waypoint baseWaypoint)
 	{
-		// var towers = FindObjectsOfType<Tower>();		// Another example of numTowers
-		// int numberOfTowers = towers.Length;			// Another example of numTowers
+		int numTowers = towerQueue.Count;
+		
 		if (numTowers < towerLimit)
 		{
 			InstantiateNewTower(baseWaypoint);
 		}
 		else
 		{
-			MoveExistingTower();
+			MoveExistingTower(baseWaypoint);
 		}
 	}
 
 	private void InstantiateNewTower(Waypoint baseWaypoint)
 	{
-		Instantiate(placeTower, baseWaypoint.transform.position, Quaternion.identity);
+		var newTower = Instantiate(placeTower, baseWaypoint.transform.position, Quaternion.identity);
+		newTower.transform.parent = towerParentTransform;
+
+		// set the baseWaypoints
+		newTower.baseWaypoint = baseWaypoint;
 		baseWaypoint.isPlacable = false;
-		numTowers++;                                    // Delete If Another example of numTowers
+
+		towerQueue.Enqueue(newTower);
 	}
 
-	private static void MoveExistingTower()
+	private void MoveExistingTower(Waypoint newBaseWaypoint)
 	{
-		print("To many towers");
+		// take bottom tower off queue
+		var oldTower = towerQueue.Dequeue();
+
+		// set the placable flags
+		oldTower.baseWaypoint.isPlacable = true; // free up the block
+		newBaseWaypoint.isPlacable = false;
+
+		// set the baseWaypoints
+		oldTower.baseWaypoint = newBaseWaypoint;
+
+		oldTower.transform.position = newBaseWaypoint.transform.position;
+
+		// put the old tower on top of the queue
+		towerQueue.Enqueue(oldTower);
 	}
 }

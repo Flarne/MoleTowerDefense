@@ -27,9 +27,8 @@ public class Pathfinder : MonoBehaviour
 		{
 			CalculatePath();
 		}
-		return path;
 
-		// ExploreNeighbours();
+		return path;
 	}
 
 	private void CalculatePath()
@@ -53,9 +52,9 @@ public class Pathfinder : MonoBehaviour
 			previousBlock = previousBlock.exploredFrom;
 		}
 
+		// reverse list
 		SetAsPath(startWaypoint);
 		path.Reverse();
-		// reverse list
 	}
 
 	private void SetAsPath(Waypoint waypoint)
