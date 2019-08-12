@@ -6,10 +6,8 @@ using UnityEngine;
 public class EnemyDamage : MonoBehaviour
 {
 	[SerializeField] Transform parent;
-	//[SerializeField] int randomScore = UnityEngine.Random.Range(1, 4);
-	[SerializeField] int scorePerHit = 5;
+	[SerializeField] int scorePerHit = 12;
 	[SerializeField] int hits = 10;
-	//[SerializeField] int enemyHealth = 50;
 	[SerializeField] ParticleSystem hitParticlePrefab;
 	[SerializeField] ParticleSystem deathParticlePrefab;
 
@@ -57,9 +55,7 @@ public class EnemyDamage : MonoBehaviour
 
 	private void ProcessHit()
 	{
-		//int randomScore = UnityEngine.Random.Range(1, 4);
 		hits = hits - 1;
-		print(hits);
 		hitParticlePrefab.Play();
 	}
 }
