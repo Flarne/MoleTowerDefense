@@ -11,9 +11,13 @@ public class EnemyDamage : MonoBehaviour
 	[SerializeField] ParticleSystem hitParticlePrefab;
 	[SerializeField] ParticleSystem deathParticlePrefab;
 
+
+	TextMesh textMesh;
+
 	void Start()
 	{
-		AddBoxcollider();
+		textMesh = GetComponent<TextMesh>();
+		AddCollider();
 	}
 
 	private void OnParticleCollision(GameObject other)
@@ -31,12 +35,12 @@ public class EnemyDamage : MonoBehaviour
 
 	private void UpdateDamageLeft()
 	{
-		TextMesh textMesh = GetComponentInChildren<TextMesh>();
+		textMesh = GetComponentInChildren<TextMesh>();
 		string updateText = hits.ToString();
 		textMesh.text = updateText;
 	}
 
-	private void AddBoxcollider()
+	private void AddCollider()
 	{
 		Collider colliderOnEnemy = gameObject.AddComponent<CapsuleCollider>();
 		colliderOnEnemy.isTrigger = false;

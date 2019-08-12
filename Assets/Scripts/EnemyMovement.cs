@@ -31,7 +31,7 @@ public class EnemyMovement : MonoBehaviour
 		var vfx = Instantiate(enemySelfDestruct, transform.position, Quaternion.identity);
 		vfx.Play();
 		float destroyDelay = vfx.main.duration;
-		destroyDelay = 2f;
+		destroyDelay = 1f;
 
 		Destroy(vfx.gameObject, destroyDelay);
 		Destroy(gameObject);
