@@ -11,7 +11,6 @@ public class EnemyDamage : MonoBehaviour
 	[SerializeField] ParticleSystem hitParticlePrefab;
 	[SerializeField] ParticleSystem deathParticlePrefab;
 
-
 	TextMesh textMesh;
 
 	void Start()
@@ -33,17 +32,16 @@ public class EnemyDamage : MonoBehaviour
 		}
 	}
 
-	private void UpdateDamageLeft()
-	{
-		textMesh = GetComponentInChildren<TextMesh>();
-		string updateText = hits.ToString();
-		textMesh.text = updateText;
-	}
-
 	private void AddCollider()
 	{
 		Collider colliderOnEnemy = gameObject.AddComponent<CapsuleCollider>();
 		colliderOnEnemy.isTrigger = false;
+	}
+
+	private void ProcessHit()
+	{
+		hitParticlePrefab.Play();
+		hits = hits - 1;
 	}
 
 	private void KillEnemy()
@@ -57,9 +55,10 @@ public class EnemyDamage : MonoBehaviour
 		Destroy(gameObject);
 	}
 
-	private void ProcessHit()
+	private void UpdateDamageLeft()
 	{
-		hits = hits - 1;
-		hitParticlePrefab.Play();
+		textMesh = GetComponentInChildren<TextMesh>();
+		string updateText = hits.ToString();
+		textMesh.text = updateText;
 	}
 }

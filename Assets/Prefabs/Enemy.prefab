@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d8fa51ecb16f2341aca864ae9c64de0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 6531117399397424415}
+  parent: {fileID: 8930731320857588373}
   scorePerHit: 1
   hits: 10
   hitParticlePrefab: {fileID: 8325711431179558099, guid: 1f4c9c11a395bd84b8f2a735de447641,
@@ -354,6 +354,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8930731320857588373}
     m_Modifications:
+    - target: {fileID: 5657203379161634733, guid: 1f4c9c11a395bd84b8f2a735de447641,
+        type: 3}
+      propertyPath: m_Name
+      value: Hit Particle Effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657203379161634733, guid: 1f4c9c11a395bd84b8f2a735de447641,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8679745180762085333, guid: 1f4c9c11a395bd84b8f2a735de447641,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -409,10 +419,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5657203379161634733, guid: 1f4c9c11a395bd84b8f2a735de447641,
+    - target: {fileID: 8325711431179558099, guid: 1f4c9c11a395bd84b8f2a735de447641,
         type: 3}
-      propertyPath: m_Name
-      value: Hit Particle Effect
+      propertyPath: ShapeModule.donutRadius
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325711431179558099, guid: 1f4c9c11a395bd84b8f2a735de447641,
+        type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f4c9c11a395bd84b8f2a735de447641, type: 3}
