@@ -10,12 +10,17 @@ public class EnemyDamage : MonoBehaviour
 	[SerializeField] int hits = 10;
 	[SerializeField] ParticleSystem hitParticlePrefab;
 	[SerializeField] ParticleSystem deathParticlePrefab;
+	[SerializeField] AudioClip enemyDamageSFX;
+	[SerializeField] AudioClip EnemyDeathSFX;
+
+	AudioSource myAudioSource;
 
 	TextMesh textMesh;
 
 	void Start()
 	{
 		textMesh = GetComponent<TextMesh>();
+		myAudioSource = GetComponent<AudioSource>();
 		AddCollider();
 	}
 
@@ -40,8 +45,9 @@ public class EnemyDamage : MonoBehaviour
 
 	private void ProcessHit()
 	{
-		hitParticlePrefab.Play();
 		hits = hits - 1;
+		myAudioSource.PlayOneShot(enemyDamageSFX);
+		hitParticlePrefab.Play();
 	}
 
 	private void KillEnemy()
@@ -50,6 +56,7 @@ public class EnemyDamage : MonoBehaviour
 		vfx.Play();
 		float destroyDelay = vfx.main.duration;
 		destroyDelay = 2f;
+		AudioSource.PlayClipAtPoint(EnemyDeathSFX, Camera.main.transform.position);
 
 		Destroy(vfx.gameObject, destroyDelay);
 		Destroy(gameObject);

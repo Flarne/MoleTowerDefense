@@ -8,7 +8,7 @@ public class EnemyMovement : MonoBehaviour
 	[SerializeField] float enemySpeed = 2f;
 	[SerializeField] ParticleSystem enemySelfDestruct;
 
-    void Start()
+	void Start()
 	{
 		Pathfinder pathfinder = FindObjectOfType<Pathfinder>();
 		var path = pathfinder.GetPath();
